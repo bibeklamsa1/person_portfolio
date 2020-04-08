@@ -1,14 +1,22 @@
 <html>
 <head>
 {% load static %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
 <title>this is my portfolio</title>
 <link rel="stylesheet" href="{% static '/blog.css' %}"
 </head>
-<body>
+<body  style="background-color:lightgray;">
+
+<h1 style="padding:4px;color:green;"><ins>About Info</ins></h1>
 {% for blog in blogs  %}
-<h1>{{blog.blog_title}}</h1>
-<h4>{{blog.blog_field}}</h4>
-<h5>{{blog.time}}</h5>
+
+<div class="row" style="margin:2%;border:4px solid pink;">
+  <div class="col-sm-2" style="border-right:4px solid pink;"><h1>{{blog.blog_title}}</h1></div>
+  <div class="col-sm-8" style="border-right:4px solid pink;"><h4>{{blog.blog_field}}</h4></div>
+  <div class="col-sm-2" style="position:relative;top:2%;%"><h5>{{blog.time}}</h5></div>
+</div>
+
 {% endfor %}
 
 </body>

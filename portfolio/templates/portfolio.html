@@ -7,24 +7,25 @@
 <title>this is my portfolio</title>
 <link rel="stylesheet" href="{% static '/portfolio.css' %}"
 </head>
-<body>
+<body style="background-color:lightgray;">
 
 <!-- Nav pills -->
 
 <div class="myclass">
 <ul class="nav nav-pills">
   <li class="nav-item">
-    <a class="nav-link active" data-toggle="pill" href="#my resume">Resume</a>
+    <a class="nav-link btn btn-success" data-toggle="pill" href="#my resume">Home</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" data-toggle="pill" href="{% url 'blog' %}">Blog</a>
+    <a class="nav-link btn btn-success" data-toggle="pill" href="{% url 'blog' %}">Blog</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" data-toggle="pill" href="#menu2">Menu 2</a>
+    <a class="nav-link btn btn-success" data-toggle="pill" href="#contactinfo">Contact Us</a>
   </li>
 </ul>
 </div>
 <div class="container text-center">
+<h1>Welcome to our shop</h1>
 <img src="{% static '/my_image.jpg' %}" height=500 width=800>
 </div>
 
@@ -32,9 +33,8 @@
   <div class="row">
 {% for project in projects %}
  <div class="col-sm-3">
- <h1>{{project.title}}</h1>
+<h4>{{project.title}}</h4>
 {% if project.url %}
-<br>
 <div class="frame">
 <a href="{{project.url}}"><img src={{project.image.url}} height="500px" width="400px" ></a>
 </div>
