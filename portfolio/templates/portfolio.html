@@ -1,0 +1,47 @@
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+{% load static %}
+<title>this is my portfolio</title>
+<link rel="stylesheet" href="{% static '/portfolio.css' %}"
+</head>
+<body>
+
+<!-- Nav pills -->
+
+<div class="myclass">
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="pill" href="#my resume">Resume</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="pill" href="{% url 'blog' %}">Blog</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="pill" href="#menu2">Menu 2</a>
+  </li>
+</ul>
+</div>
+<div class="container text-center">
+<img src="{% static '/my_image.jpg' %}" height=500 width=800>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+{% for project in projects %}
+ <div class="col-sm-3">
+ <h1>{{project.title}}</h1>
+{% if project.url %}
+<br>
+<div class="frame">
+<a href="{{project.url}}"><img src={{project.image.url}} height="500px" width="400px" ></a>
+</div>
+{% endif %}
+<h3>{{project.description}}</h3>
+</div>
+{% endfor %}
+</div>
+</body>
+</html>

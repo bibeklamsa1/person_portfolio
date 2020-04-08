@@ -1,0 +1,15 @@
+<html>
+<head>
+{% load static %}
+<title>this is my portfolio</title>
+<link rel="stylesheet" href="{% static '/blog.css' %}"
+</head>
+<body>
+{% for blog in blogs  %}
+<h1>{{blog.blog_title}}</h1>
+<h4>{{blog.blog_field}}</h4>
+<h5>{{blog.time}}</h5>
+{% endfor %}
+
+</body>
+</html>
